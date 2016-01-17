@@ -1,3 +1,5 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
 # Logs
 logs
 *.log
@@ -23,12 +25,24 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directory
-# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
-node_modules
-
 # Optional npm cache directory
 .npm
 
 # Optional REPL history
 .node_repl_history
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
