@@ -1,11 +1,17 @@
-export default function withEventTransition(delegateTo, ...args) {
-  return this.lookup(delegateTo).apply(this, args)
-    .then((infos) => {
-      if (this.newView) {
-        this.lookup('service:liquid-fire-events')
-          .trigger('transitionAnimated', this.newView);
-      }
+import Ember from 'ember';
 
-      return infos;
-    });
+export default function withEventTransition(delegateTo, ...args) {
+  const viewRoot = this.oldView || this.newView;
+  const service = viewRoot.container.lookup('service:liquid-fire-events');
+
+  return new Ember.RSVP.Promise((resolve) => {
+    service.trigger('transitionBegan');
+    resolve();
+  }).then(() => {
+    return this.lookup(delegateTo).apply(this, args);
+  }).then((infos) => {
+    service.trigger('transitionAnimated', this.newView);
+
+    return infos;
+  });
 }
