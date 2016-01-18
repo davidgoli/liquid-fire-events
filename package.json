@@ -1,7 +1,7 @@
 {
   "name": "liquid-fire-events",
   "version": "0.0.3",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Simple events triggered on Liquid Fire animations.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -15,7 +15,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "David Golightly",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
@@ -39,7 +39,10 @@
     "ember-try": "~0.0.8"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "delayed render",
+    "animation",
+    "liquid fire"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
