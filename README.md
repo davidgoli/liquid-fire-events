@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/davidgoli/liquid-fire-events.svg?branch=master)](https://travis-ci.org/davidgoli/liquid-fire-events)
+[![npm version](https://badge.fury.io/js/liquid-fire-events.svg)](https://badge.fury.io/js/liquid-fire-events)
+[![Ember Observer Score](http://emberobserver.com/badges/liquid-fire-events.svg)](http://emberobserver.com/addons/liquid-fire-events)
+
 # Liquid-fire-events
 
 Provides a service that you can use to subscribe to 2 events from Liquid Fire:
