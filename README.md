@@ -4,8 +4,27 @@
 
 # Liquid-fire-events
 
-Provides a service that you can use to subscribe to 2 events from Liquid Fire:
-`transitionBegan` and `transitionAnimated`.
+Provides a service `liquid-fire-events` that you can use to subscribe to the
+following events from Liquid Fire: `transitionBegan` and `transitionAnimated`.
+
+Example usage:
+
+```js
+export default Ember.Component.extend({
+  liquidFireEvents: Ember.inject.service(),
+  didInsertElement() {
+    this.get('liquidFireEvents')
+      .on('transitionBegan', () => {
+        this.set('animating', true);
+      }).on('transitionAnimated'), (newView) => {
+        this.set('animating', false);
+      });
+  }
+});
+```
+
+Note: these are global events, fired every time a Liquid Fire transition occurs
+anywhere within the rendered DOM.
 
 Additionally, this addon provides a component `delayed-render` which
 wraps a block of markup and only renders it after a transition has finished.
