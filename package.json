@@ -1,6 +1,6 @@
 {
   "name": "liquid-fire-events",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple events triggered on Liquid Fire animations.",
   "directories": {
     "doc": "doc",
