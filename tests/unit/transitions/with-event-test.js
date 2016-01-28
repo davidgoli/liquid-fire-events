@@ -12,15 +12,6 @@ moduleFor('transition:with-event', 'WithEventTransition', {
 test('events', function (assert) {
   assert.expect(0);
   const service = Ember.Service.extend(Ember.Evented).create();
-  const fakeView = {
-    container: {
-      lookup(path) {
-        if (path === 'service:liquid-fire-events') {
-          return service;
-        }
-      }
-    }
-  };
 
   const callTransition = sinon.mock();
   const transitionContext = {
@@ -29,7 +20,7 @@ test('events', function (assert) {
         return callTransition;
       }
     },
-    newView: fakeView
+    service: service
   };
 
   const began = sinon.mock();
